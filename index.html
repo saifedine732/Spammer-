@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>A Small Question</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
+
+<style>
+  body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: radial-gradient(circle at top, #1a1a1a, #000);
+    font-family: 'Cinzel', serif;
+    overflow:hidden;
+    color:#f5f5f5;
+  }
+
+  .card{
+    text-align:center;
+    background:rgba(0,0,0,0.85);
+    padding:50px;
+    border-radius:15px;
+    box-shadow:0 0 40px rgba(255,60,0,0.4);
+    position:relative;
+    width:360px;
+    border:1px solid #aa2c00;
+  }
+
+  h1{
+    font-size:22px;
+    margin-bottom:40px;
+  }
+
+  button{
+    padding:15px 30px;
+    border:none;
+    border-radius:30px;
+    font-size:16px;
+    cursor:pointer;
+    margin:10px;
+    transition:0.3s;
+    font-family: 'Cinzel', serif;
+  }
+
+  #yes{
+    background:linear-gradient(45deg,#8b0000,#ff3c00);
+    color:white;
+    box-shadow:0 0 15px #ff3c00;
+  }
+
+  #no{
+    position:absolute;
+    background:#444;
+    color:white;
+  }
+
+  .footer{
+    margin-top:25px;
+    font-size:12px;
+    opacity:0.6;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1 id="question">
+    Sarra, ready for our next level of memories?
+  </h1>
+
+  <button id="yes" onclick="yesClicked()">Yes</button>
+  <button id="no">No</button>
+
+  <div class="footer">Night of the Seven Kingdoms 🐉</div>
+</div>
+
+<script>
+  const noBtn = document.getElementById("no");
+
+  noBtn.addEventListener("mouseover", () => {
+    const x = Math.random() * (window.innerWidth - 120);
+    const y = Math.random() * (window.innerHeight - 60);
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+  });
+
+  function yesClicked(){
+    document.getElementById("question").innerHTML =
+      "The pact is sealed. Fire and memories await us. 🔥";
+  }
+</script>
+
+</body>
+</html>
